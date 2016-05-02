@@ -1,0 +1,6 @@
+In file included from cur.cpp:16:0:
+kudlajev/main.cpp: In member function 'virtual float Matrix::determinant()':
+kudlajev/main.cpp:196:11: error: cannot convert 'Matrix' to 'float' in return
+   return *this;
+           ^
+./check.sh: line 24: ./a.out: No such file or directory
