@@ -253,7 +253,7 @@ bool Matrix::failed(){
 	return false;
 }
 
-Matrix* get_init(int n, int m)
+Matrix* get_init(int m, int n)
 {
 	Matrix* A = new Matrix(m, n);
 	return A;
