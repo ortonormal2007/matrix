@@ -193,7 +193,7 @@ Matrix Matrix::minorcalc(int col, int raw){
 //
 float Matrix::determinant(){
 	if (failed()){
-		return *this;
+		return 0;
 	}
 	float det = 0;
 	if (m == 1){
