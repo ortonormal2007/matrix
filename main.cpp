@@ -65,21 +65,32 @@ Matrix::Matrix(const Matrix &A){
 }
 //
 Matrix& Matrix::operator= (const Matrix &A){
-		m = A.m;
-		n = A.n;
-		delete data;
-		data = new float*[n];
-		for (int i = 0; i < n; i++){
-			data[i] = new float[m];
-			for (int k = 0; k < n; k++){
-				data[i][k] = A.data[i][k];
-			}
+	if (data != NULL){
+		for(int i = 0; i < n; i++){
+			delete[] data[i];
 		}
+		delete[] data;
+	}
+	m = A.m;
+	n = A.n;
+	//delete data;
+	data = new float*[n];
+	for (int i = 0; i < n; i++){
+		data[i] = new float[m];
+	}
+	for(int i = 0; i < n; i++){
+		for (int k = 0; k < m; k++){
+			data[i][k] = A.data[i][k];
+		}	
+	}
 	return *this;
 }
 //
 Matrix::~Matrix(){
-	delete data;
+	for(int i = 0; i < n; i++){
+		delete[] data[i];
+	}
+	delete[] data;
 }
 
 //
